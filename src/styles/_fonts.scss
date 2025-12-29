@@ -1,0 +1,34 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Barlow';
+  font-weight: 400;
+  src: url('/fonts/barlow/Barlow-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Barlow';
+  font-weight: 700;
+  src: url('/fonts/barlow/Barlow-Bold.woff2') format('woff2');
+}
+
+@font-face { 
+  font-display: swap;
+  font-family: 'Barlow Condensed';
+  font-weight: 400;
+  src: url('/fonts/barlow-condensed/Barlow-Condensed-Regular.woff2') format('woff2');  
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Barlow Condensed';
+  font-weight: 700;
+  src: url('../fonts/barlow-condensed/Barlow-Condensed-Bold.woff2') format('woff2'); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Bellefair';
+  font-weight: 400;
+  src: url('../fonts/bellefair/Bellefair-Regular.woff2') format('woff2'); 
+}
