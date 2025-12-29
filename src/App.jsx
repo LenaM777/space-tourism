@@ -1,8 +1,5 @@
-import React from "react";
-import "./styles/global.scss";
+import Layout from "./layout/Layout";
 
-const App = () => {
-  return <div>App</div>;
-};
-
-export default App;
+export default function App() {
+  return <Layout />;
+}
