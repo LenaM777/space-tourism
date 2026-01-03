@@ -3,6 +3,8 @@
 @use "./mixins" as *;
 @use "./typography" as *;
 
+@use "./components/nav-link";
+
 
 *,
 *::before,
@@ -17,7 +19,7 @@ a {
 }
 
 body {
-  font-family:"Barlow", sans-serif;
+  background: black;
 }
 
 .app-wrapper {

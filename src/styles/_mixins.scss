@@ -1,12 +1,11 @@
 @mixin flex(
   $direction: row,
-  $justify: flex-start,
   $align: stretch,
-  $wrap: nowrap
+  $justify: flex-start,
+ 
 ) {
   display: flex;
   flex-direction: $direction;
-  justify-content: $justify;
   align-items: $align;
-  flex-wrap: $wrap;
+  justify-content: $justify;
 }

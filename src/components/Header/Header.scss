@@ -1,0 +1,91 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as typography;
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+  @include flex(row, center, space-between);
+
+  @media (min-width: $bp-tablet) {
+    padding: 0;
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding-top: 40px;
+  }
+
+  &__elems {
+    @media (min-width: $bp-desktop) {
+      @include flex(row, center, center);
+      flex-basis: 50%;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+
+    @media (min-width: $bp-tablet) {
+      margin: 0 40px;
+      width: 48px;
+      height: 48px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      margin: 0 64px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @media (min-width: $bp-desktop) {
+      display: flex;
+      flex: 1;
+      height: 1px;
+      position: relative;
+      z-index: 4;
+      background: var(--color-white);
+      opacity: 0.25;
+      margin-left: -32px;
+      transform: translateX(32px);
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: $bp-tablet) {
+      @include flex(row, center, flex-end);
+      gap: 48px;
+      height: 96px;
+      flex: 1;
+      backdrop-filter: blur(40px);
+      background: var(--color-glass-white);
+      padding-right: 40px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      flex-basis: 50%;
+      padding-right: 64px;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    width: 24px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (min-width: $bp-tablet) {
+      display: none;
+    }
+  }
+}
