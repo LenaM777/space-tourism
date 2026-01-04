@@ -1,0 +1,14 @@
+@use "../../variables" as *;
+@use "../../typography" as typography;
+
+.section-subtitle {
+  @include typography.heading-md;
+  color: var(--color-white);
+  opacity: 0.5;
+
+  &--sm {
+    @include typography.heading-sm;
+    color: var(--color-blue-light);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../../variables" as *;
+@use "../../typography" as typography;
+
+.section-title {
+  @include typography.heading-lg;
+  color: var(--color-white);
+
+  &--big {
+    @include typography.heading-xxl;
+    color: var(--color-white);
+  }
+}

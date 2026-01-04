@@ -31,7 +31,8 @@ export default function Header() {
         </NavLink>
       </nav>
       <button
-        className={`header__burger ${isOpen ? "active" : ""}`}
+        className="header__burger"
+        //{`header__burger ${isOpen ? "active" : ""}`}
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
       >

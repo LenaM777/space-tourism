@@ -5,7 +5,10 @@
 
 @use "./components/mobile-menu";
 @use "./components/nav-link";
-
+@use "./components/section/section-subtitle";
+@use "./components/section/section-text";
+@use "./components/section/section-title";
+@use "./components/section/section";
 
 *,
 *::before,
@@ -16,7 +19,7 @@
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
@@ -26,11 +29,25 @@ body {
 .app-wrapper {
   min-height: 100vh;
   width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  &.home {
+    background-image: url("/assets/images/background-home-mobile.jpg");
+
+    @media (min-width: $bp-tablet) {
+      background-image: url("/assets/images/background-home-tablet.jpg");
+    }
+
+    @media (min-width: $bp-desktop) {
+      background-image: url("/assets/images/background-home-desktop.jpg");
+    }
+  }
 }
 
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0; 
+  padding: 0;
 }

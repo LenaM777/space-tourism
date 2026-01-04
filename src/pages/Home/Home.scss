@@ -1,0 +1,83 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as typography;
+
+.home {
+  &__content {
+    margin: 0 auto;
+    @include flex(column, center, center);
+    gap: 0;
+
+    @media (min-width: $bp-tablet) {
+      width: 100%;
+      gap: 66px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      height: 632px;
+      @include flex(row, end, space-between);
+      gap: 30px;
+    }
+  }
+
+  &__info {
+    max-width: 512px;
+    @include flex(column, center, center);
+    gap: 24px;
+    text-align: center;
+
+    @media (min-width: $bp-desktop) {
+      max-width: 540px;
+      flex-basis: 50%;
+      @include flex(column, flex-start, center);
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin: 120px 0;
+    width: 144px;
+    height: 144px;
+    padding: 0;
+    flex-shrink: 0;
+    @include flex(row, center, center);
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-blue-dark);
+    @include typography.heading-md;
+    transition: color 0.3s ease;
+
+    @media (min-width: $bp-tablet) {
+      margin: 0;
+      width: 272px;
+      height: 272px;
+    }
+    @media (min-width: $bp-desktop) {
+      margin-bottom: 36px;
+    }
+
+    &:hover span {
+      opacity: 0.5;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--color-white);
+      z-index: -1;
+      transform: scale(1);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    &:hover::after {
+      transform: scale(1.6);
+      opacity: 0.1;
+    }
+  }
+}

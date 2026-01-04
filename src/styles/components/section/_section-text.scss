@@ -1,0 +1,7 @@
+@use "../../variables" as *;
+@use "../../typography" as typography;
+
+.section-text {
+  @include typography.body-md;
+  color: var(--color-blue-light);
+}
