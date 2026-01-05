@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as typography;
+
+.page-title {
+  @include flex-center;
+  gap: 24px;
+  @include typography.heading-sm;
+  color: var(--color-white);
+  padding-bottom: 24px;
+
+  span {
+    font-weight: 700;
+    opacity: 0.25;
+  }
+
+  @media (min-width: $bp-tablet) {
+    @include flex(row, center, flex-start);
+  }
+}

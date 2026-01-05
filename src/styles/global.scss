@@ -5,6 +5,8 @@
 
 @use "./components/mobile-menu";
 @use "./components/nav-link";
+@use "./components/page-title";
+@use "./components/paginations";
 @use "./components/section/section-subtitle";
 @use "./components/section/section-text";
 @use "./components/section/section-title";
@@ -41,6 +43,18 @@ body {
 
     @media (min-width: $bp-desktop) {
       background-image: url("/assets/images/background-home-desktop.jpg");
+    }
+  }
+
+  &.destination {
+    background-image: url("/assets/images/background-destination-mobile.jpg");
+
+    @media (min-width: $bp-tablet) {
+      background-image: url("/assets/images/background-destination-tablet.jpg");
+    }
+
+    @media (min-width: $bp-desktop) {
+      background-image: url("/assets/images/background-destination-desktop.jpg");
     }
   }
 }
