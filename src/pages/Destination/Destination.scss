@@ -41,23 +41,21 @@
   }
 
   &__img {
-    background: var(--color-blue-light);
-    @include flex-center;
-    width: 150px;
-    height: 150px;
+    display: block;
+   width: 150px;
+    height: auto;
+    object-fit: cover;
     margin: 26px 0;
-    border-radius: 50%;
+    
 
     @media (min-width: $bp-tablet) {
       width: 300px;
-      height: 300px;
       margin: 42px 0;
     }
 
     @media (min-width: $bp-desktop) {
       margin: 0 auto;
       width: 480px;
-      height: 480px;
     }
   }
 
@@ -97,6 +95,7 @@
 
   &__stat {
     @include typography.caption;
+    text-transform: uppercase;
     color: var(--color-blue-light);
   }
 

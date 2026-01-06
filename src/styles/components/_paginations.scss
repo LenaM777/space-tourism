@@ -18,8 +18,12 @@
     transition: 0.25s;
 
     &:hover {
-      border-bottom-color: var(--color-white);
-      color: var(--color-white);
+      border-bottom-color: var(--color-white-50);
     }
+
+    &.active {
+        border-bottom-color: var(--color-white);
+        color: var(--color-white);
+      }
   }
 }
