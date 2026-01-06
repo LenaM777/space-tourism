@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data.json";
 import "./Destination.scss";
 
@@ -14,7 +15,18 @@ export default function Destination() {
           <span>01</span>PICK YOUR DESTINATION
         </h3>
         <div className="destination__content">
-          <img src={images.png} alt="" className="destination__img" />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={name}
+              src={images.png}
+              alt={name}
+              className="destination__img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            />
+          </AnimatePresence>
           <div className="destination__info">
             <div className="destination__tabs">
               {data.destinations.map((planet, i) => (
@@ -27,21 +39,31 @@ export default function Destination() {
                 </button>
               ))}
             </div>
-            <div className="destination__exposition">
-              <h1 className="section-title">{name}</h1>
-              <p className="section-text">{description}</p>
-            </div>
-            <hr className="destination__line"></hr>
-            <div className="destination__facts">
-              <div className="destination__fact">
-                <h6 className="destination__stat">AVG. DISTANCE</h6>
-                <p className="destination__values">{distance}</p>
-              </div>
-              <div className="destination__fact">
-                <h6 className="destination__stat">Est. travel time</h6>
-                <p className="destination__values">{travel}</p>
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={description}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="destination__exposition">
+                  <h1 className="section-title">{name}</h1>
+                  <p className="section-text">{description}</p>
+                </div>
+                <hr className="destination__line"></hr>
+                <div className="destination__facts">
+                  <div className="destination__fact">
+                    <h6 className="destination__stat">AVG. DISTANCE</h6>
+                    <p className="destination__values">{distance}</p>
+                  </div>
+                  <div className="destination__fact">
+                    <h6 className="destination__stat">Est. travel time</h6>
+                    <p className="destination__values">{travel}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
