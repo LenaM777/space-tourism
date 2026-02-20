@@ -43,7 +43,7 @@
   ],
   "crew": [
     {
-      "name": "Douglas Hurley",
+      "name":"Douglas Hurley",
       "images": {
         "png": "./assets/crew/image-douglas-hurley.png",
         "webp": "./assets/crew/image-douglas-hurley.webp"

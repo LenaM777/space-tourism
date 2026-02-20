@@ -1,0 +1,101 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as typography;
+
+.crew {
+  padding: 0;
+
+  &__container {
+    height: 100%;
+    padding-top: 24px;
+
+    @media (min-width: $bp-tablet) {
+      padding-top: 40px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      padding: 48px 0;
+      max-width: 1110px;
+    }
+  }
+
+  &__content {
+    @include flex(column, center, space-between);
+    gap: 32px;
+    min-height: calc(100vh - 100px);
+
+    @media (min-width: $bp-desktop) {
+      @include flex(row, stretch, space-between);
+      min-height: 734px;
+    }
+  }
+
+  &__info {
+    padding-top: 24px;
+    @include flex(column, center, center);
+    gap: 24px;
+    max-width: 512px;
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
+      max-width: none;
+      padding: 0;
+      flex-basis: calc(50% - 16px);
+      gap: 40px;
+    }
+  }
+
+  &__exposition {
+    @include flex(column, center, center);
+    text-align: center;
+    gap: 24px;
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+
+  &__name {
+    @include flex(column, center, center);
+    gap: 8px;
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
+      text-align: left;
+      gap: 16px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    @include flex(column, center, flex-end);
+    margin-top: auto;
+
+    @media (min-width: $bp-desktop) {
+      height: 100%;
+      @include flex(column, flex-end, flex-end);
+      flex-basis: calc(50% - 16px);
+    }
+
+    img {
+      display: block;
+      object-fit: contain;
+      max-height: 340px;
+      width: auto;
+      -webkit-mask-image: linear-gradient(to bottom,black 80%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+      @media (min-width: $bp-tablet) {
+        max-height: 500px;
+      }
+
+      @media (min-width: $bp-desktop) {
+        padding-bottom: 30px;
+        max-height: 676px;
+        max-width: 100%;
+      }
+    }
+  }
+}
