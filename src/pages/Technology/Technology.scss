@@ -3,6 +3,14 @@
 @use "../../styles/typography" as typography;
 
 .technology {
+  &--right {
+    @include flex(row, center, flex-end);
+  }
+
+  &--left {
+    @include flex(row, center, flex-start);
+  }
+
   &__container {
     width: 100%;
 
