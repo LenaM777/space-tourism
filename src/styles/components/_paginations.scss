@@ -22,52 +22,84 @@
     }
 
     &.active {
-        border-bottom-color: var(--color-white);
-        color: var(--color-white);
-      }
+      border-bottom-color: var(--color-white);
+      color: var(--color-white);
+    }
   }
 }
 
-
 .crew__tabs {
-      display: flex;
-          gap: 16px;
-      
-      justify-content: flex-start;
-     padding-bottom: 0;
+  display: flex;
+  gap: 16px;
 
-      @media (min-width: $bp-tablet) {
-        justify-content: center;
-    
-      }
+  justify-content: flex-start;
+  padding-bottom: 0;
 
-     @media (min-width: $bp-desktop) {
-      padding-bottom: 48px;
-      gap: 40px;
-     }
+  @media (min-width: $bp-tablet) {
+    justify-content: center;
+  }
 
-      button {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        background: rgba(255, 255, 255, 0.3);
-        transition: background 0.3s;
+  @media (min-width: $bp-desktop) {
+    padding-bottom: 48px;
+    gap: 40px;
+  }
 
-        @media (min-width: $bp-tablet) {
-          width: 14px;
-          height: 14px;
-         
-        }
-        
+  button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    transition: background 0.3s;
 
-        &.active {
-          background: #ffffff;
-        }
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.6);
-        }
-      }
+    @media (min-width: $bp-tablet) {
+      width: 14px;
+      height: 14px;
     }
+
+    &.active {
+      background: #ffffff;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.technology__tabs {
+  @include flex-center;
+  gap: 16px;
+
+  @media (min-width: $bp-desktop) {
+    @include flex-center(column);
+    gap: 32px;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+    background: transparent;
+    @include typography.heading-md;
+    cursor: pointer;
+    color: var(--color-white);
+
+    @media (min-width: $bp-tablet) {
+      width: 56px;
+      height: 56px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      width: 80px;
+      height: 80px;
+    }
+
+    &.active {
+      background: var(--color-white);
+      color: var(--color-blue-900);
+    }
+  }
+}

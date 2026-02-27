@@ -1,0 +1,73 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as typography;
+
+.technology {
+  &__container {
+    width: 100%;
+
+    @media (min-width: $bp-desktop) {
+      max-width: 1275px;
+    }
+  }
+
+  &__content {
+    @include flex-center(column);
+    gap: 32px;
+
+    @media (min-width: $bp-desktop) {
+      min-height: 734px;
+      @include flex-center(row-reverse);
+      gap: 32px;
+    }
+  }
+
+  &__image {
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    padding-top: 64px;
+
+    @media (min-width: $bp-desktop) {
+      margin: 0;
+      padding: 0;
+      flex: 1;
+    }
+  }
+
+  &__info {
+    @include flex-center(column);
+    text-align: center;
+    gap: 40px;
+
+    @media (min-width: $bp-desktop) {
+      @include flex-center;
+      gap: 64px;
+    }
+  }
+
+  &__exposition {
+    @include flex-center(column);
+    gap: 16px;
+    width: 100%;
+
+    @media (min-width: $bp-tablet) {
+      max-width: 512px;
+    }
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
+      text-align: left;
+      max-width: 492px;
+      gap: 24px;
+    }
+  }
+
+  &__heading {
+    @include flex-center(column);
+    gap: 16px;
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
+    }
+  }
+}
