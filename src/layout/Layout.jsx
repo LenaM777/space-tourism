@@ -7,7 +7,7 @@ export default function Layout() {
   const route = location.pathname.split("/")[1] || "home";
 
   return (
-    <div className={`app-wrapper ${route}`}>
+    <div className={`app-wrapper bg-${route}`}>
       <div className="container">
         <Header />
         <main>
