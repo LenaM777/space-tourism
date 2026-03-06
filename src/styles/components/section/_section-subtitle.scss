@@ -10,5 +10,9 @@
     @include typography.heading-sm;
     color: var(--color-blue-light);
     opacity: 1;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 28px;
   }
+}
 }

@@ -1,7 +1,10 @@
 :root {
---color-blue-dark: #0B0D17;
+--color-blue-dark: rgba(11, 13, 23, 1);
+--color-blue-dark-50: rgba(11, 13, 23, 0.5);
 --color-blue-light: #D0D6F9;
---color-white: #FFFFFF;
+--color-white: rgba(255, 255, 255, 1);
+--color-white-17: rgba(255, 255, 255, 0.17);
+--color-white-25: rgba(255, 255, 255, 0.25);
 --color-white-50: rgba(255, 255, 255, 0.5);
 --color-glass-white: rgba(255, 255, 255, 0.04);
 --color-glass-blue:  rgba(11, 13, 23, 0.15);

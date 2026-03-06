@@ -2,8 +2,9 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/typography" as typography;
 
+
 .destination__tabs {
-  display: flex;
+ @include flex-center;
   gap: 32px;
 
   button {
@@ -13,9 +14,11 @@
     color: var(--color-blue-light);
     text-transform: uppercase;
     padding-bottom: 12px;
-    cursor: pointer;
     border-bottom: 3px solid transparent;
-    transition: 0.25s;
+   // transition: 0.25s;
+
+   
+    transition: border-color 0.3s ease;
 
     &:hover {
       border-bottom-color: var(--color-white-50);
@@ -29,14 +32,12 @@
 }
 
 .crew__tabs {
-  display: flex;
+  @include flex(row, center, flex-start);
   gap: 16px;
-
-  justify-content: flex-start;
   padding-bottom: 0;
 
   @media (min-width: $bp-tablet) {
-    justify-content: center;
+    @include flex-center;
   }
 
   @media (min-width: $bp-desktop) {
@@ -49,21 +50,22 @@
     height: 10px;
     border-radius: 50%;
     border: none;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
-    transition: background 0.3s;
+    background: var(--color-white-17);
+    transition: background-color 0.3s;
+
+    
 
     @media (min-width: $bp-tablet) {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
     }
 
     &.active {
-      background: #ffffff;
+      background: var(--color-white);
     }
 
     &:hover {
-      background: rgba(255, 255, 255, 0.6);
+      background: var(--color-white-50);
     }
   }
 }
@@ -81,10 +83,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-white-25);
     background: transparent;
     @include typography.heading-md;
-    cursor: pointer;
     color: var(--color-white);
 
     @media (min-width: $bp-tablet) {
@@ -96,10 +97,14 @@
       width: 80px;
       height: 80px;
     }
-
+&:hover {
+      border: 1px solid var(--color-white);
+    }
     &.active {
       background: var(--color-white);
-      color: var(--color-blue-900);
+      color: var(--color-blue-dark);
+
+      
     }
   }
 }

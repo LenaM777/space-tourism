@@ -9,4 +9,8 @@
     @include typography.heading-xxl;
     color: var(--color-white);
   }
+
+  &--destination {
+    @include typography.heading-xl;
+  }
 }

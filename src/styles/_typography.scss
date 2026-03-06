@@ -4,13 +4,14 @@
   font-family: "Bellefair", serif;
   font-style: normal;
   font-size: 80px;
-  line-height: 72px;
+  //line-height: 72px;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: uppercase;
 
   @media (min-width: $bp-tablet) {
     font-size: 144px;
+     //line-height: 72px;
   }
 }
 
@@ -71,7 +72,7 @@
   font-style: normal;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 0.143em;
   text-transform: uppercase;
 
   @media (min-width: $bp-tablet) {
@@ -86,7 +87,8 @@
 @mixin text-preset-6 {
   font-family: "Bellefair", sans-serif;
   font-style: normal;
-  font-size: 16px;
+  //font-size: 16px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: 0;
 

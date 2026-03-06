@@ -3,6 +3,13 @@
 @use "../../styles/typography" as typography;
 
 .home {
+  //min-height: 100vh;
+
+  @media (min-width: $bp-desktop) {
+    min-height: 100vh;
+    @include flex(row, flex-end, space-between);
+  }
+
   &__content {
     margin: 0 auto;
     @include flex(column, center, center);
@@ -14,70 +21,89 @@
     }
 
     @media (min-width: $bp-desktop) {
-      height: 632px;
-      @include flex(row, end, space-between);
+      @include flex(row, flex-end, space-between);
       gap: 30px;
     }
   }
 
   &__info {
     max-width: 512px;
-    @include flex(column, center, center);
+    @include flex-center(column);
     gap: 24px;
     text-align: center;
 
     @media (min-width: $bp-desktop) {
-      max-width: 540px;
-      flex-basis: 50%;
+      max-width: 100%;
+      flex-basis: calc(50% - 16px);
       @include flex(column, flex-start, center);
       text-align: left;
     }
   }
 
-  &__button {
+  &__btn-container {
+    @include flex(column, center, stretch);
     margin: 120px 0;
-    width: 144px;
-    height: 144px;
-    padding: 0;
-    flex-shrink: 0;
-    @include flex(row, center, center);
-    position: relative;
-    z-index: 1;
-    border: none;
-    border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-blue-dark);
-    @include typography.heading-md;
-    transition: color 0.3s ease;
 
     @media (min-width: $bp-tablet) {
       margin: 0;
+    }
+
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-end, flex-end);
+      flex-basis: calc(50% - 16px);
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-white);
+    z-index: 1;
+
+    @media (min-width: $bp-tablet) {
       width: 272px;
       height: 272px;
     }
+
     @media (min-width: $bp-desktop) {
       margin-bottom: 36px;
     }
 
+    span {
+      @include typography.heading-md;
+      color: var(--color-blue-dark);
+      position: relative;
+      z-index: 2;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 32px;
+      }
+    }
+
     &:hover span {
-      opacity: 0.5;
+      color: var(--color-blue-dark-50);
     }
 
     &::after {
       content: "";
       position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: var(--color-white);
-      z-index: -1;
-      transform: scale(1);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-white);
       opacity: 0;
-      transition: transform 0.4s ease, opacity 0.4s ease;
+      border-radius: 50%;
+      z-index: -1;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
 
     &:hover::after {
       transform: scale(1.6);
-      opacity: 0.1;
+      opacity: 0.17;
     }
   }
 }

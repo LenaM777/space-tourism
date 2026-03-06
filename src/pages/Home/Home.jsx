@@ -2,8 +2,8 @@ import "./Home.scss";
 
 export default function Home() {
   return (
-    <section className="home section section--home">
-      <div className="section__container">
+    <section className="home section--home">
+      <div className="section__container home__container">
         <div className="home__content">
           <div className="home__info">
             <h4 className="section-subtitle section-subtitle--sm">
@@ -17,9 +17,11 @@ export default function Home() {
               this world experience!
             </p>
           </div>
-          <button className="home__button">
-            <span>EXPLORE</span>
-          </button>
+          <div className="home__btn-container">
+            <button className="home__button">
+              <span>EXPLORE</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -3,6 +3,8 @@
 @use "../../styles/typography" as typography;
 
 .destination {
+  
+
   &__content {
     @include flex-center(column);
     gap: 32px;
@@ -14,21 +16,25 @@
   }
 
   &__info {
-    margin: 0 auto;
-    @include flex-center(column);
-    gap: 24px;
-
-    @media (min-width: $bp-tablet) {
-      max-width: 514px;
-    }
     @media (min-width: $bp-desktop) {
-      @include flex(column, flex-start, center);
-      gap: 40px;
-      max-width: 445px;
-      flex-basis: 50%;
+      flex-basis: calc(50% - 16px);
     }
   }
 
+  &__show {
+     @include flex-center(column);
+    gap: 24px;
+    max-width: 514px;
+
+
+   @media (min-width: $bp-desktop) {
+    @include flex(column, flex-start, center);
+      gap: 40px;
+      max-width: 445px;
+      margin: 0 auto;
+      
+    }
+  }
   &__exposition {
     @include flex-center(column);
     text-align: center;
@@ -40,28 +46,41 @@
     }
   }
 
-  &__img {
-    display: block;
-   width: 150px;
-    height: auto;
-    object-fit: cover;
-    margin: 26px 0;
+  &__image {
+   margin: 0 auto;
+    padding: 26px 0;
+    //animation: rotatePlanet 100s linear infinite;
+  
+  /* Щоб планета не смикалася при наведенні, можна додати: */
+  display: block;
+  animation: rotatePlanet 220s linear infinite;
+  filter: drop-shadow(0 0 12px var(--color-white-17)); /* Легке сяйво */
     
-
     @media (min-width: $bp-tablet) {
-      width: 300px;
-      margin: 42px 0;
+    padding: 42px 0;
     }
 
     @media (min-width: $bp-desktop) {
-      margin: 0 auto;
-      width: 480px;
+      flex-basis: calc(50% - 16px);
+    }
+
+    img {
+      object-fit: contain;
+       max-height: 150px;
+   
+    @media (min-width: $bp-tablet) {
+      max-height: 300px;
+    }
+
+    @media (min-width: $bp-desktop) {
+     max-height: 480px;
+    }
     }
   }
 
   &__line {
-    color: var(--color-white);
-    opacity: 0.25;
+   background-color: var(--color-white-25);
+   border: none;
     width: 100%;
     height: 1px;
     margin: 24px 0;
@@ -108,5 +127,16 @@
     @include typography.body-lg;
     color: var(--color-white);
     text-transform: uppercase;
+  }
+
+  
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
