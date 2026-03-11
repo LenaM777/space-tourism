@@ -1,13 +1,16 @@
 @use "../../variables" as *;
+@use "../../mixins" as *;
 
 .section {
-  padding: 0 24px;
-  margin: 0 auto;
+  @include flex-center(column);
+  padding: 24px 0;
 
-  &__container {
-    width: 100%;
-    max-width: 1110px;
-    margin: 0 auto;
-    padding: 0;
+  @media (min-width: $bp-tablet) {
+    padding: 40px 0;
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding: 48px 0;
+    min-height: 100vh;
   }
 }

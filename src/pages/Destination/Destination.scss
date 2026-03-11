@@ -3,15 +3,20 @@
 @use "../../styles/typography" as typography;
 
 .destination {
-  
+  &__container {
+    @include content-wrapper;
+    flex-grow: 1;
+    @include flex(column);
+  }
 
   &__content {
+    width: 100%;
     @include flex-center(column);
     gap: 32px;
 
     @media (min-width: $bp-desktop) {
       @include flex-center;
-      height: 734px;
+      flex-grow: 1;
     }
   }
 
@@ -21,21 +26,23 @@
     }
   }
 
-  &__show {
-     @include flex-center(column);
+  &__exposition {
+    @include flex-center(column);
     gap: 24px;
     max-width: 514px;
 
-
-   @media (min-width: $bp-desktop) {
-    @include flex(column, flex-start, center);
+    @media (min-width: $bp-tablet) {
+      padding: 12px 0;
+    }
+    @media (min-width: $bp-desktop) {
+      @include flex(column, flex-start, center);
       gap: 40px;
       max-width: 445px;
       margin: 0 auto;
-      
+      padding: 0;
     }
   }
-  &__exposition {
+  &__heading {
     @include flex-center(column);
     text-align: center;
     gap: 16px;
@@ -47,47 +54,42 @@
   }
 
   &__image {
-   margin: 0 auto;
+    margin: 0 auto;
     padding: 26px 0;
-    //animation: rotatePlanet 100s linear infinite;
-  
-  /* Щоб планета не смикалася при наведенні, можна додати: */
-  display: block;
-  animation: rotatePlanet 220s linear infinite;
-  filter: drop-shadow(0 0 12px var(--color-white-17)); /* Легке сяйво */
-    
+
     @media (min-width: $bp-tablet) {
-    padding: 42px 0;
+      padding: 42px 0;
     }
 
     @media (min-width: $bp-desktop) {
       flex-basis: calc(50% - 16px);
+      padding: 0;
     }
 
     img {
       object-fit: contain;
-       max-height: 150px;
-   
-    @media (min-width: $bp-tablet) {
-      max-height: 300px;
-    }
+      max-height: 150px;
 
-    @media (min-width: $bp-desktop) {
-     max-height: 480px;
-    }
+      @media (min-width: $bp-tablet) {
+        max-height: 300px;
+      }
+
+      @media (min-width: $bp-desktop) {
+        max-height: 480px;
+      }
     }
   }
 
   &__line {
-   background-color: var(--color-white-25);
-   border: none;
+    background-color: var(--color-white-25);
+    border: none;
     width: 100%;
     height: 1px;
     margin: 24px 0;
 
-     @media (min-width: $bp-desktop) {
+    @media (min-width: $bp-desktop) {
       margin: 40px 0;
-     }
+    }
   }
 
   &__facts {
@@ -127,16 +129,5 @@
     @include typography.body-lg;
     color: var(--color-white);
     text-transform: uppercase;
-  }
-
-  
-}
-
-@keyframes rotatePlanet {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
