@@ -2,17 +2,26 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/typography" as typography;
 
-.home {
-  //min-height: 100vh;
 
-  @media (min-width: $bp-desktop) {
-    min-height: 100vh;
-    @include flex(row, flex-end, space-between);
+
+.home {
+  padding: 24px 0;
+  @include flex-center(column);
+   min-height: 100vh;
+  
+  @media (min-width: $bp-tablet) {
+    padding: 128px 0;
   }
 
+  &__container {
+  @include content-wrapper; 
+   flex-grow: 1; 
+    @include flex-center(column); 
+}
+
   &__content {
-    margin: 0 auto;
-    @include flex(column, center, center);
+    flex-grow: 1;
+   @include flex(column, center, space-between);
     gap: 0;
 
     @media (min-width: $bp-tablet) {
@@ -23,6 +32,7 @@
     @media (min-width: $bp-desktop) {
       @include flex(row, flex-end, space-between);
       gap: 30px;
+     
     }
   }
 
@@ -41,7 +51,6 @@
   }
 
   &__btn-container {
-    @include flex(column, center, stretch);
     margin: 120px 0;
 
     @media (min-width: $bp-tablet) {
@@ -107,3 +116,4 @@
     }
   }
 }
+

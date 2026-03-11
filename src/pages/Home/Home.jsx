@@ -2,8 +2,8 @@ import "./Home.scss";
 
 export default function Home() {
   return (
-    <section className="home section--home">
-      <div className="section__container home__container">
+    <section className="home ">
+      <div className="home__container">
         <div className="home__content">
           <div className="home__info">
             <h4 className="section-subtitle section-subtitle--sm">

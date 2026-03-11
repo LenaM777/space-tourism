@@ -1,29 +1,8 @@
 @use "../../variables" as *;
 
 .section {
-  padding: 24px;
+  padding: 0 24px;
   margin: 0 auto;
-
-  @media (min-width: $bp-tablet) {
-    padding: 40px;
-  }
-
-  @media (min-width: $bp-desktop) {
-    padding: 48px 24px;
-  }
-
-  &--home {
-    padding: 24px;
-    margin: 0 auto;
-
-    @media (min-width: $bp-tablet) {
-      padding: 128px 40px;
-    }
-
-    @media (min-width: $bp-desktop) {
-      padding: 128px 0;
-    }
-  }
 
   &__container {
     width: 100%;
