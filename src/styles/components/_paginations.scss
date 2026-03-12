@@ -15,9 +15,6 @@
     text-transform: uppercase;
     padding-bottom: 12px;
     border-bottom: 3px solid transparent;
-   // transition: 0.25s;
-
-   
     transition: border-color 0.3s ease;
 
     &:hover {
@@ -53,9 +50,7 @@
     background: var(--color-white-17);
     transition: background-color 0.3s;
 
-    
-
-    @media (min-width: $bp-tablet) {
+    @media (min-width: $bp-desktop) {
       width: 16px;
       height: 16px;
     }

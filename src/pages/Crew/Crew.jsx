@@ -9,8 +9,8 @@ export default function Crew() {
   const { name, role, bio, images } = crew[index];
 
   return (
-    <section className=" crew">
-      <div className="section__container crew__container">
+    <section className="crew section">
+      <div className="crew__container">
         <h3 className="page-title">
           <span>02</span>MEET YOUR CREW
         </h3>
