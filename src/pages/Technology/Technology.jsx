@@ -9,12 +9,14 @@ export default function Technology() {
   const { name, description, images } = technology[index];
 
   return (
-    <section
-      className={`technology section ${
-        index === 2 ? "technology--left" : "technology--right"
-      }`}
-    >
-      <div className="technology__container">
+    <section className="technology section">
+      <div
+        className={`technology__container ${
+          index === 2
+            ? "technology__container--left"
+            : "technology__container--right"
+        }`}
+      >
         <h3 className="page-title">
           <span>03</span>SPACE LAUNCH 101
         </h3>
@@ -28,10 +30,10 @@ export default function Technology() {
           >
             <picture>
               <source media="(min-width: 1024px)" srcSet={images.portrait} />
-              <img src={images.landscape} alt={name} />
+              <source media="(min-width: 768px)" srcSet={images.landscape} />
+              <img src={images.portrait} alt={name} />
             </picture>
           </motion.div>
-
           <div className="technology__info">
             <div className="technology__tabs">
               {data.technology.map((vehicle, i) => (
