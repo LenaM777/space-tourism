@@ -1,12 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/icons/logo.svg";
 import burger from "../../assets/icons/icon-hamburger.svg";
 import iconClose from "../../assets/icons/icon-close.svg";
 
+const NAV_LINKS = [
+  { id: "00", title: "HOME", path: "/" },
+  { id: "01", title: "DESTINATION", path: "/destination" },
+  { id: "02", title: "CREW", path: "/crew" },
+  { id: "03", title: "TECHNOLOGY", path: "/technology" },
+];
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
+  const renderLinks = (className) =>
+    NAV_LINKS.map((link) => (
+      <NavLink
+        key={link.path}
+        to={link.path}
+        className={className}
+        onClick={() => setIsOpen(false)}
+      >
+        <span>{link.id}</span>
+        {link.title}
+      </NavLink>
+    ));
 
   return (
     <header className="header">
@@ -17,64 +45,20 @@ export default function Header() {
         <div className="header__line"></div>
       </div>
       <nav className="header__nav">
-        <NavLink to="/" className="nav-link nav-link__desk">
-          <span>00</span>home
-        </NavLink>
-        <NavLink to="/destination" className="nav-link nav-link__desk">
-          <span>01</span>destination
-        </NavLink>
-        <NavLink to="/crew" className="nav-link nav-link__desk">
-          <span>02</span>crew
-        </NavLink>
-        <NavLink to="/technology" className="nav-link nav-link__desk">
-          <span>03</span>technology
-        </NavLink>
+        {renderLinks("nav-link nav-link__desk")}
       </nav>
-      <button
-        className="header__burger"
-        //{`header__burger ${isOpen ? "active" : ""}`}
-        onClick={() => setIsOpen(true)}
-        aria-label="Open menu"
-      >
+      <button className="header__burger" onClick={() => setIsOpen(true)}>
         <img src={burger} alt="burger" />
       </button>
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <button
           className="mobile-menu__btn-close"
           onClick={() => setIsOpen(false)}
-          aria-label="Close menu"
         >
           <img className="mobile-menu__close" src={iconClose} alt="close" />
         </button>
         <div className="mobile-menu__nav">
-          <NavLink
-            onClick={() => setIsOpen(false)}
-            to="/"
-            className="nav-link nav-link__mobile"
-          >
-            <span>00</span>home
-          </NavLink>
-          <NavLink
-            onClick={() => setIsOpen(false)}
-            to="/destination"
-            className="nav-link nav-link__mobile"
-          >
-            <span>01</span>destination
-          </NavLink>
-          <NavLink
-            onClick={() => setIsOpen(false)}
-            to="/crew"
-            className="nav-link nav-link__mobile"
-          >
-            <span>02</span>crew
-          </NavLink>
-          <NavLink
-            onClick={() => setIsOpen(false)}
-            to="/technology"
-            className="nav-link nav-link__mobile"
-          >
-            <span>03</span>technology
-          </NavLink>
+          {renderLinks("nav-link nav-link__mobile")}
         </div>
       </div>
     </header>
