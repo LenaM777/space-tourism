@@ -10,11 +10,12 @@
   width: 254px;
   height: 100vh;
   background: var(--color-glass-white);
+  -webkit-backdrop-filter: blur(40px); 
   backdrop-filter: blur(40px);
   padding: 0;
   @include flex(column);
   gap: 48px;
-  transition: right 0.3s ease;
+  transition: right 0.9s ease;
 
    &.open {
     right: 0;
@@ -26,13 +27,16 @@
     @include flex(row, center, flex-end);
     background: none;
     border: none;
-    cursor: pointer;
+  }
+
+  &__close {
+    width: 24px;
+    height: 21px;
   }
 
   &__nav {
     padding-left: 32px;
     @include flex(column, flex-start, center);
-    gap: 32px;
   }
 }
 

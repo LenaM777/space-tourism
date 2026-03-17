@@ -18,7 +18,7 @@
   justify-content: center;
 }
 
-@mixin content-wrapper($max-width: 1110px, $margin: 0 auto) {
+@mixin content-wrapper($max-width: 1158px, $margin: 0 auto, $p-left: 24px, $p-right: 24px) {
   width: 100%;
   max-width: $max-width;
   margin: $margin;
@@ -29,6 +29,7 @@
   }
 
   @media (min-width: $bp-desktop) {
-    padding-inline: 0; 
+   padding-left: $p-left;
+    padding-right: $p-right; 
   }
 }

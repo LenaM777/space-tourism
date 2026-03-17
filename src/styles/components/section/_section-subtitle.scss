@@ -3,13 +3,11 @@
 
 .section-subtitle {
   @include typography.heading-md;
-  color: var(--color-white);
-  opacity: 0.5;
+  color: var(--color-white-50);
 
   &--sm {
     @include typography.heading-sm;
     color: var(--color-blue-light);
-    opacity: 1;
 
     @media (min-width: $bp-tablet) {
       font-size: 28px;

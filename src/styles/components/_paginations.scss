@@ -82,6 +82,7 @@
     background: transparent;
     @include typography.heading-md;
     color: var(--color-white);
+    transition: background-color 0.8s;
 
     @media (min-width: $bp-tablet) {
       width: 56px;
@@ -98,8 +99,6 @@
     &.active {
       background: var(--color-white);
       color: var(--color-blue-dark);
-
-      
     }
   }
 }

@@ -6,7 +6,7 @@
 --color-white-17: rgba(255, 255, 255, 0.17);
 --color-white-25: rgba(255, 255, 255, 0.25);
 --color-white-50: rgba(255, 255, 255, 0.5);
---color-glass-white: rgba(255, 255, 255, 0.04);
+--color-glass-white: rgba(255, 255, 255, 0.05);
 --color-glass-blue:  rgba(11, 13, 23, 0.15);
 --image-fade-mask: linear-gradient(
     to bottom, 
@@ -16,6 +16,6 @@
 }
 
 
-$bp-mobile: 375px;
+$bp-mobile: 480px;
 $bp-tablet: 768px;
 $bp-desktop: 1024px;

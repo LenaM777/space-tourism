@@ -19,7 +19,7 @@
 
   &__elems {
     @media (min-width: $bp-desktop) {
-      @include flex(row, center, center);
+      @include flex-center;
       flex-basis: 50%;
     }
   }
@@ -45,13 +45,12 @@
     display: none;
 
     @media (min-width: $bp-desktop) {
-      display: flex;
+      @include flex-center;
       flex: 1;
       height: 1px;
       position: relative;
       z-index: 4;
-      background: var(--color-white);
-      opacity: 0.25;
+      background: var(--color-white-25);
       margin-left: -32px;
       transform: translateX(32px);
     }
@@ -73,16 +72,15 @@
     @media (min-width: $bp-desktop) {
       flex-basis: 50%;
       padding-right: 64px;
+      padding-left: 16px;
     }
   }
 
   &__burger {
-    display: flex;
     width: 24px;
     height: 21px;
     background: none;
     border: none;
-    cursor: pointer;
 
     @media (min-width: $bp-tablet) {
       display: none;

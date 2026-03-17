@@ -12,10 +12,12 @@
 
     @media (min-width: $bp-desktop) {
       &--right {
-        @include content-wrapper(1275px, 0 0 0 auto);
+        @include content-wrapper(1275px, 0 0 0 auto, $p-right: 0, 
+    $p-left: 24px);
       }
       &--left {
-        @include content-wrapper(1275px, 0 auto 0 0);
+        @include content-wrapper(1275px, 0 auto 0 0, $p-right: 24px, 
+    $p-left: 0);
       }
     }
   }
