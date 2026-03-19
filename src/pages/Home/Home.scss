@@ -4,12 +4,9 @@
 
 .home {
   padding: 24px 0;
-  @include flex-center(column);
-  min-height: 100vh;
 
   @media (min-width: $bp-tablet) {
     padding: 128px 0;
-    min-height: calc(100vh - 136px);
   }
 
   &__container {

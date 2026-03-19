@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <motion.div {...pageTransition}>
-      <section className="home">
+      <section className="home section">
         <div className="home__container">
           <div className="home__content">
             <motion.div

@@ -3,15 +3,12 @@
 @use "../../styles/typography" as typography;
 
 .crew {
-  min-height: 100vh;
-  
   @media (min-width: $bp-tablet) {
     padding-bottom: 0;
   }
 
   @media (min-width: $bp-desktop) {
     padding: 48px 0;
-    min-height: calc(100vh - 136px);
   }
 
   &__container {
