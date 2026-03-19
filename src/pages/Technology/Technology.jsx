@@ -25,7 +25,7 @@ export default function Technology() {
           <div className="technology__content">
             <motion.div
               key={images.portrait}
-              className="technology__image "
+              className="technology__image"
               initial={{ opacity: 0, y: 30, scale: 1.1 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4, ease: customEase }}
@@ -33,7 +33,7 @@ export default function Technology() {
               <picture>
                 <source media="(min-width: 1024px)" srcSet={images.portrait} />
                 <source media="(min-width: 768px)" srcSet={images.landscape} />
-                <img src={images.portrait} alt={name} />
+                <img src={images.portrait} alt={`Space technology: ${name}`} />
               </picture>
             </motion.div>
             <div className="technology__info">
@@ -43,6 +43,9 @@ export default function Technology() {
                     key={vehicle.name}
                     className={i === index ? "active" : ""}
                     onClick={() => setIndex(i)}
+                    aria-label={`Step ${i + 1}: ${vehicle.name}`}
+                    aria-selected={i === index}
+                    role="tab"
                   >
                     {i + 1}
                   </button>

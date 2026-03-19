@@ -47,15 +47,22 @@ export default function Header() {
       <nav className="header__nav">
         {renderLinks("nav-link nav-link__desk")}
       </nav>
-      <button className="header__burger" onClick={() => setIsOpen(true)}>
-        <img src={burger} alt="burger" />
+      <button
+        className="header__burger"
+        aria-label="Open menu"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(true)}
+      >
+        <img src={burger} alt="" />
       </button>
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <button
           className="mobile-menu__btn-close"
+          aria-label="Close"
+          aria-expanded={isOpen}
           onClick={() => setIsOpen(false)}
         >
-          <img className="mobile-menu__close" src={iconClose} alt="close" />
+          <img className="mobile-menu__close" src={iconClose} alt="" />
         </button>
         <div className="mobile-menu__nav">
           {renderLinks("nav-link nav-link__mobile")}

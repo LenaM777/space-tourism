@@ -45,6 +45,9 @@ export default function Crew() {
                     key={person.name}
                     className={i === index ? "active" : ""}
                     onClick={() => setIndex(i)}
+                    aria-label={`Show crew member: ${person.name}`}
+                    aria-selected={i === index}
+                    role="tab"
                   />
                 ))}
               </div>
@@ -58,7 +61,7 @@ export default function Crew() {
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ duration: 0.8, ease: customEase }}
               >
-                <img src={images.png} alt={name} />
+                <img src={images.webp} alt={`Crew member: ${role} ${name}`} />
               </motion.div>
             </AnimatePresence>
           </motion.div>

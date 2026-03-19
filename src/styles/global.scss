@@ -109,6 +109,7 @@ a {
 
 button {
     cursor: url('../assets/icons/cursor.svg'), pointer;
+
 }
 
 img {
@@ -118,3 +119,16 @@ img {
  object-fit: cover;
 }
 
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-blue-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px var(--color-focus-shadow);
+  border-radius: 2px; 
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -28,7 +28,7 @@ export default function Destination() {
                 whileHover="hover"
                 whileTap="tap"
               >
-                <img src={images.png} alt={name} />
+                <img src={images.webp} alt={`The planet ${name}`} />
               </motion.div>
             </AnimatePresence>
             <div className="destination__info">
@@ -39,6 +39,8 @@ export default function Destination() {
                       key={planet.name}
                       className={i === index ? "active" : ""}
                       onClick={() => setIndex(i)}
+                      aria-selected={index === i}
+                      role="tab"
                     >
                       {planet.name}
                     </button>

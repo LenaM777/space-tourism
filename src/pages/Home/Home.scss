@@ -109,5 +109,12 @@
       transform: scale(1.6);
       opacity: 0.17;
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-white);
+      border-radius: 50%;
+      outline-offset: 8px;
+      box-shadow: 0 0 0 15px var(--color-white-17);
+    }
   }
 }
