@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { pageTransition } from "../../utils/animations";
+import { pageTransition, customEase } from "../../utils/animations";
 import data from "../../data.json";
 import "./Crew.scss";
 
@@ -16,16 +16,21 @@ export default function Crew() {
           <h3 className="page-title">
             <span>02</span>MEET YOUR CREW
           </h3>
-          <div className="crew__content">
+          <motion.div
+            className="crew__content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
             <div className="crew__info">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
                   className="crew__exposition"
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <div className="crew__name">
                     <h2 className="section-subtitle">{role}</h2>
@@ -34,7 +39,6 @@ export default function Crew() {
                   <p className="section-text">{bio}</p>
                 </motion.div>
               </AnimatePresence>
-
               <div className="crew__tabs">
                 {data.crew.map((person, i) => (
                   <button
@@ -45,16 +49,19 @@ export default function Crew() {
                 ))}
               </div>
             </div>
-            <motion.div
-              key={images.png}
-              className="crew__image"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <img src={images.png} alt={name} />
-            </motion.div>
-          </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                className="crew__image"
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.8, ease: customEase }}
+              >
+                <img src={images.png} alt={name} />
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
     </motion.div>

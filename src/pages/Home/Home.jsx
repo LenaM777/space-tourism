@@ -1,29 +1,61 @@
 import "./Home.scss";
 import { motion } from "framer-motion";
-import { pageTransition } from "../../utils/animations";
+import { useNavigate } from "react-router-dom";
+import {
+  pageTransition,
+  cascadeContainer,
+  itemVariants,
+} from "../../utils/animations";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <motion.div {...pageTransition}>
-      <section className="home ">
+      <section className="home">
         <div className="home__container">
           <div className="home__content">
-            <div className="home__info">
-              <h4 className="section-subtitle section-subtitle--sm">
+            <motion.div
+              className="home__info"
+              variants={cascadeContainer}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.h4
+                variants={itemVariants}
+                className="section-subtitle section-subtitle--sm"
+              >
                 SO, YOU WANT TO TRAVEL TO
-              </h4>
-              <h1 className="section-title section-title--big">SPACE</h1>
-              <p className="section-text">
+              </motion.h4>
+              <motion.h1
+                variants={itemVariants}
+                className="section-title section-title--big"
+              >
+                SPACE
+              </motion.h1>
+              <motion.p variants={itemVariants} className="section-text">
                 Let’s face it; if you want to go to space, you might as well
                 genuinely go to outer space and not hover kind of on the edge of
                 it. Well sit back, and relax because we’ll give you a truly out
                 of this world experience!
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             <div className="home__btn-container">
-              <button className="home__button">
+              <motion.button
+                className="home__button"
+                onClick={() => navigate("/destination")}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 1.2,
+                  duration: 1,
+                  ease: "easeOut",
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <span>EXPLORE</span>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

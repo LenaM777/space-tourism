@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { pageTransition } from "../../utils/animations";
+import { pageTransition, customEase } from "../../utils/animations";
 import data from "../../data.json";
 import "./Technology.scss";
 
@@ -26,9 +26,9 @@ export default function Technology() {
             <motion.div
               key={images.portrait}
               className="technology__image "
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30, scale: 1.1 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: customEase }}
             >
               <picture>
                 <source media="(min-width: 1024px)" srcSet={images.portrait} />
@@ -51,10 +51,10 @@ export default function Technology() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5, ease: customEase }}
                   className="technology__exposition"
                 >
                   <div className="technology__heading">

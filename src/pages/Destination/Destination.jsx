@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { pageTransition } from "../../utils/animations";
+import { pageTransition, planetVariants } from "../../utils/animations";
 import data from "../../data.json";
 import "./Destination.scss";
 
@@ -8,35 +8,6 @@ export default function Destination() {
   const [index, setIndex] = useState(0);
   const { destinations } = data;
   const { name, description, distance, travel, images } = destinations[index];
-
-  const planetVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.8,
-    },
-    show: {
-      opacity: 1,
-      scale: 1,
-      x: 0,
-      y: 0,
-      filter: "drop-shadow(0 0 24px var(--color-white-17))",
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-      },
-    },
-    hover: {
-      y: -10,
-      x: 10,
-      filter: "drop-shadow(0 0 42px var(--color-white-25))",
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
 
   return (
     <motion.div {...pageTransition}>
@@ -52,10 +23,10 @@ export default function Destination() {
                 className="destination__image"
                 variants={planetVariants}
                 initial="hidden"
-                animate="show"
+                animate={["show", "infinite"]}
                 exit="hidden"
                 whileHover="hover"
-                whileTap={{ scale: 1.03 }}
+                whileTap="tap"
               >
                 <img src={images.png} alt={name} />
               </motion.div>
@@ -75,11 +46,11 @@ export default function Destination() {
                 </div>
                 <AnimatePresence mode="wait">
                   <motion.div
-                    key={description}
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -30 }}
-                    transition={{ duration: 0.4 }}
+                    key={name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
                   >
                     <div className="destination__heading">
                       <h1 className="section-title section-title--destination">

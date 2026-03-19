@@ -11,6 +11,7 @@
 
   @media (min-width: $bp-desktop) {
     padding: 48px 0;
+    min-height: calc(100vh - 136px);
   }
 
   &__container {
@@ -91,6 +92,7 @@
       mask-origin: content-box;
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
+      transform-origin: bottom center;
 
       @media (min-width: $bp-tablet) {
         max-height: 500px;
