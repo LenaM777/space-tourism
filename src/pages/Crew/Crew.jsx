@@ -13,9 +13,9 @@ export default function Crew() {
     <motion.div {...pageTransition}>
       <section className="crew section">
         <div className="crew__container">
-          <h3 className="page-title">
+          <h1 className="page-title">
             <span>02</span>MEET YOUR CREW
-          </h3>
+          </h1>
           <motion.div
             className="crew__content"
             initial={{ opacity: 0 }}
@@ -34,12 +34,16 @@ export default function Crew() {
                 >
                   <div className="crew__name">
                     <h2 className="section-subtitle">{role}</h2>
-                    <h1 className="section-title">{name}</h1>
+                    <h3 className="section-title">{name}</h3>
                   </div>
                   <p className="section-text">{bio}</p>
                 </motion.div>
               </AnimatePresence>
-              <div className="crew__tabs">
+              <div
+                className="crew__tabs"
+                role="tablist"
+                aria-label="Crew member selection"
+              >
                 {data.crew.map((person, i) => (
                   <button
                     key={person.name}

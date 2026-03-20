@@ -39,8 +39,8 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__elems">
-        <a href="/">
-          <img className="header__logo" src={logo} alt="" />
+        <a href="/" aria-label="Home">
+          <img className="header__logo" src={logo} alt="Space Tourism Logo" />
         </a>
         <div className="header__line"></div>
       </div>

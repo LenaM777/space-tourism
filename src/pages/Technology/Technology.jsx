@@ -19,16 +19,16 @@ export default function Technology() {
               : "technology__container--right"
           }`}
         >
-          <h3 className="page-title">
+          <h1 className="page-title">
             <span>03</span>SPACE LAUNCH 101
-          </h3>
+          </h1>
           <div className="technology__content">
             <motion.div
               key={images.portrait}
               className="technology__image"
               initial={{ opacity: 0, y: 30, scale: 1.1 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: customEase }}
+              transition={{ duration: 0.4, ease: customEase }}
             >
               <picture>
                 <source media="(min-width: 1024px)" srcSet={images.portrait} />
@@ -37,11 +37,18 @@ export default function Technology() {
                   src={images.portrait}
                   alt={`Space technology: ${name}`}
                   decoding="async"
+                  width="515"
+                  height="527"
+                  fetchpriority="high"
                 />
               </picture>
             </motion.div>
             <div className="technology__info">
-              <div className="technology__tabs">
+              <div
+                className="technology__tabs"
+                role="tablist"
+                aria-label="Technology selection"
+              >
                 {data.technology.map((vehicle, i) => (
                   <button
                     key={vehicle.name}
@@ -66,7 +73,7 @@ export default function Technology() {
                 >
                   <div className="technology__heading">
                     <h2 className="section-subtitle">THE TERMINOLOGY…</h2>
-                    <h1 className="section-title">{name}</h1>
+                    <h3 className="section-title">{name}</h3>
                   </div>
                   <p className="section-text">{description}</p>
                 </motion.div>

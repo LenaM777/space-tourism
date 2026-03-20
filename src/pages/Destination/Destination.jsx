@@ -13,9 +13,9 @@ export default function Destination() {
     <motion.div {...pageTransition}>
       <section className="destination section">
         <div className="destination__container">
-          <h3 className="page-title">
+          <h1 className="page-title">
             <span>01</span>PICK YOUR DESTINATION
-          </h3>
+          </h1>
           <div className="destination__content">
             <AnimatePresence mode="wait">
               <motion.div
@@ -30,12 +30,19 @@ export default function Destination() {
                   src={images.webp}
                   alt={`The planet ${name}`}
                   decoding="async"
+                  width="480"
+                  height="480"
+                  fetchpriority="high"
                 />
               </motion.div>
             </AnimatePresence>
             <div className="destination__info">
               <div className="destination__exposition">
-                <div className="destination__tabs">
+                <div
+                  className="destination__tabs"
+                  role="tablist"
+                  aria-label="Destination selection"
+                >
                   {data.destinations.map((planet, i) => (
                     <button
                       key={planet.name}
@@ -57,19 +64,19 @@ export default function Destination() {
                     transition={{ duration: 0.4 }}
                   >
                     <div className="destination__heading">
-                      <h1 className="section-title section-title--destination">
+                      <h2 className="section-title section-title--destination">
                         {name}
-                      </h1>
+                      </h2>
                       <p className="section-text">{description}</p>
                     </div>
                     <hr className="destination__line"></hr>
                     <div className="destination__facts">
                       <div className="destination__fact">
-                        <h6 className="destination__stat">AVG. DISTANCE</h6>
+                        <h3 className="destination__stat">AVG. DISTANCE</h3>
                         <p className="destination__values">{distance}</p>
                       </div>
                       <div className="destination__fact">
-                        <h6 className="destination__stat">Est. travel time</h6>
+                        <h3 className="destination__stat">Est. travel time</h3>
                         <p className="destination__values">{travel}</p>
                       </div>
                     </div>
