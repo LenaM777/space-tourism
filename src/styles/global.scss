@@ -20,7 +20,6 @@
   box-sizing: border-box;
 }
 
-
 body {
     min-height: 100vh;
     background-color: var(--color-blue-dark);
@@ -34,16 +33,45 @@ main {
   position: relative; 
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a, button {
+    cursor: url('../assets/icons/cursor.svg'), pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-blue-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px var(--color-focus-shadow);
+  border-radius: 2px; 
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+img {
+ display: block;
+ width: 100%;
+ height: auto;
+ object-fit: cover;
+ image-rendering: -webkit-optimize-contrast; 
+ image-rendering: crisp-edges;
+}
+
 .app-wrapper {
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-size: cover;
-  background-position: center;
-  transition: background-image 0.5s ease-in-out;
- 
-
+  background-position:  center;
+  background-attachment: fixed;
 
   &.bg-home {
     background-image: url("/assets/images/background-home-mobile.jpg");
@@ -99,36 +127,7 @@ main {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0px; 
-  
-}
-
-a {
-  text-decoration: none;
-   cursor: url('../assets/icons/cursor.svg'), pointer;
-}
-
-button {
-    cursor: url('../assets/icons/cursor.svg'), pointer;
-
-}
-
-img {
- display: block;
- width: 100%;
- height: auto;
- object-fit: cover;
 }
 
 
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--color-blue-light);
-  outline-offset: 4px;
-  box-shadow: 0 0 0 4px var(--color-focus-shadow);
-  border-radius: 2px; 
-}
 
-button:focus:not(:focus-visible),
-a:focus:not(:focus-visible) {
-  outline: none;
-}

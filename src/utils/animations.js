@@ -21,7 +21,7 @@ export const planetVariants = {
     transition: {
       duration: 1,
       delay: 0.3,
-      ease: [0.43, 0.13, 0.23, 0.96],
+      ease: customEase,
     },
   },
   infinite: {
@@ -31,16 +31,7 @@ export const planetVariants = {
       repeat: Infinity,
       ease: "linear",
     },
-  },
-  hover: {
-    scale: 1.05,
-    filter: "drop-shadow(0 0 42px var(--color-white-25))",
-    transition: { duration: 0.4 },
-  },
-  tap: {
-    scale: 1.03,
-    transition: { duration: 0.2 },
-  },
+  }
 };
 
 export const cascadeContainer = {
@@ -59,8 +50,11 @@ export const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: customEase,
     },
   },
 };
+
+
+

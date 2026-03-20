@@ -40,7 +40,7 @@ export default function Header() {
     <header className="header">
       <div className="header__elems">
         <a href="/">
-          <img className="header__logo" src={logo} alt="logo" />
+          <img className="header__logo" src={logo} alt="" />
         </a>
         <div className="header__line"></div>
       </div>

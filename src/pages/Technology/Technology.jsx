@@ -28,12 +28,16 @@ export default function Technology() {
               className="technology__image"
               initial={{ opacity: 0, y: 30, scale: 1.1 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: customEase }}
+              transition={{ duration: 0.6, delay: 0.4, ease: customEase }}
             >
               <picture>
                 <source media="(min-width: 1024px)" srcSet={images.portrait} />
                 <source media="(min-width: 768px)" srcSet={images.landscape} />
-                <img src={images.portrait} alt={`Space technology: ${name}`} />
+                <img
+                  src={images.portrait}
+                  alt={`Space technology: ${name}`}
+                  decoding="async"
+                />
               </picture>
             </motion.div>
             <div className="technology__info">

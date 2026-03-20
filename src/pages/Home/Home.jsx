@@ -51,7 +51,6 @@ export default function Home() {
                   duration: 1,
                   ease: "easeOut",
                 }}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span>EXPLORE</span>

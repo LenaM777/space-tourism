@@ -20,7 +20,7 @@ export default function Crew() {
             className="crew__content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
             <div className="crew__info">
               <AnimatePresence mode="wait">
@@ -61,7 +61,11 @@ export default function Crew() {
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ duration: 0.8, ease: customEase }}
               >
-                <img src={images.webp} alt={`Crew member: ${role} ${name}`} />
+                <img
+                  src={images.webp}
+                  alt={`Crew member: ${role} ${name}`}
+                  decoding="async"
+                />
               </motion.div>
             </AnimatePresence>
           </motion.div>

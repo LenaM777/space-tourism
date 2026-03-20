@@ -25,10 +25,12 @@ export default function Destination() {
                 initial="hidden"
                 animate={["show", "infinite"]}
                 exit="hidden"
-                whileHover="hover"
-                whileTap="tap"
               >
-                <img src={images.webp} alt={`The planet ${name}`} />
+                <img
+                  src={images.webp}
+                  alt={`The planet ${name}`}
+                  decoding="async"
+                />
               </motion.div>
             </AnimatePresence>
             <div className="destination__info">
@@ -52,7 +54,7 @@ export default function Destination() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.4 }}
                   >
                     <div className="destination__heading">
                       <h1 className="section-title section-title--destination">
