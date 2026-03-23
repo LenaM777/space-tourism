@@ -3,6 +3,8 @@
 @use "../../styles/typography" as typography;
 
 .crew {
+  //overflow-y: hidden;
+  
   @media (min-width: $bp-tablet) {
     padding-bottom: 0;
   }
@@ -24,13 +26,14 @@
 
     @media (min-width: $bp-desktop) {
       @include flex(row, stretch, space-between);
+      min-height: 734px;
     }
   }
 
   &__info {
     padding-top: 40px;
     @include flex(column, center, space-between);
-    flex-grow: 1;
+    //flex-grow: 1;
     gap: 24px;
     max-width: 512px;
 
@@ -48,10 +51,15 @@
     text-align: center;
     gap: 24px;
 
+    @media (min-width: $bp-tablet) {
+      padding-bottom: 40px;
+    }
+
     @media (min-width: $bp-desktop) {
       @include flex(column, flex-start, center);
       flex-grow: 1;
       text-align: left;
+      padding-bottom: 0;
     }
   }
 
@@ -73,6 +81,10 @@
     width: 100%;
     min-height: 350px;
 
+    @media (min-width: $bp-tablet) {
+      padding-top: 40px;
+    }
+
     @media (min-width: $bp-desktop) {
       height: 100%;
       @include flex(column, center, flex-end);
@@ -92,7 +104,7 @@
       transform-origin: bottom center;
 
       @media (min-width: $bp-tablet) {
-        max-height: 500px;
+        max-height: 560px;
         margin-bottom: -56px;
       }
 

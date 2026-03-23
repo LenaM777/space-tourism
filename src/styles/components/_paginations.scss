@@ -34,6 +34,7 @@
 
   @media (min-width: $bp-tablet) {
     @include flex-center;
+    gap: 20px;
   }
 
   @media (min-width: $bp-desktop) {
@@ -49,6 +50,7 @@
     border: none;
     background-color: var(--color-white-17);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: url("../assets/icons/cursor.svg"), pointer;
 
     &::after {
       content: "";
@@ -62,9 +64,13 @@
     }
 
     @media (min-width: $bp-desktop) {
+      width: 14px;
+      height: 14px;
+    }
+
+    @media (min-width: $bp-desktop) {
       width: 16px;
       height: 16px;
-      cursor: url("../assets/icons/cursor.svg"), pointer;
     }
 
     &.active {
