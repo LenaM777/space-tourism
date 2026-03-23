@@ -18,13 +18,8 @@ A high-performance, fully accessible multi-page space tourism application built 
 ## Deployment
 
 This project is built using **Vite** and deployed on **Vercel**.
-[View Live Site](Insert your link here)
-
-## Deployment
-
-This React (Vite) pet project deployed on **Vercel**.
-
 [View on Vercel](https://space-tourism-ten-kappa.vercel.app/)
+
 
 ## Screenshots
 
